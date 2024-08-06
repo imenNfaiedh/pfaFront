@@ -123,7 +123,7 @@ export class AddPartenaireComponent implements OnInit {
       idPartenaire: null,
       nomPartenaire: ['', [Validators.required, Validators.minLength(5)]],
       mail: ['', [Validators.required]],
-      bank :['', [Validators.required]]
+      bank :[null]
      
       
     });

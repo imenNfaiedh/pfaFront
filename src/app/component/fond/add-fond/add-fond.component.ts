@@ -27,6 +27,7 @@ export class AddFondComponent implements OnInit {
     public fb: FormBuilder,
     private route: ActivatedRoute,
     private fondService : FondService,
+    
     private router : Router,
 
     //private activeModal: NgbActiveModal,
@@ -96,7 +97,7 @@ export class AddFondComponent implements OnInit {
 
 
        const item = Object.assign({
-       // "idFond" : this.fondForm.value.fond.idFond ,
+        "fondId" : this.fondForm.value.fondId ,
         "montantMin" : this.fondForm.value. montantMin,
         "nomCompletFond" : this.fondForm.value.nomCompletFond,
         "montantMax" : this.fondForm.value.montantMax,
@@ -142,7 +143,7 @@ export class AddFondComponent implements OnInit {
 
   infoForm() {
     this.fondForm =  this.fb.group({
-      idFond: null,
+      fondId: null,
       nomCompletFond: ['', [Validators.required, Validators.minLength(5)]],
       montantMax: ['', [Validators.required]],
       montantMin:['', [Validators.required]],

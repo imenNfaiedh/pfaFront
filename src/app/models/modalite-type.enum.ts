@@ -1,6 +1,6 @@
 export enum TypeModalite {
-    GPP ,
-    declarative_AF ,
-    declarative_AP  }
+   GPP,
+   DECLARATIVE_AF,
+   DECLARATIVE_AP }
 
   

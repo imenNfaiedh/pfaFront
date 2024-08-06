@@ -7,6 +7,7 @@ import { AddModaliteComponent } from "./component/modalite/add-modalite/add-moda
 import { ListPartenaireComponent } from "./component/partenaire/list-partenaire/list-partenaire.component";
 import { AddPartenaireComponent } from "./component/partenaire/add-partenaire/add-partenaire.component";
 import { AddConventionComponent } from "./component/convention/add-convention/add-convention.component";
+import { ViewPartenaireComponent } from "./component/partenaire/view-partenaire/view-partenaire.component";
 
 const routes: Routes = [
 
@@ -22,6 +23,9 @@ const routes: Routes = [
     { path: 'listpartenaire', component: ListPartenaireComponent },
     { path: 'addpartenaire', component: AddPartenaireComponent },
     { path: 'addpartenaire/:id', component: AddPartenaireComponent },
+
+    { path: 'viewpartenaire/:id', component: ViewPartenaireComponent },
+
 
     { path: 'addconvention', component: AddConventionComponent },
 

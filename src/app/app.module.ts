@@ -41,6 +41,8 @@ import { ListPartenaireComponent } from './component/partenaire/list-partenaire/
 import { AddPartenaireComponent } from './component/partenaire/add-partenaire/add-partenaire.component';
 import { AddConventionComponent } from './component/convention/add-convention/add-convention.component';
 import { ViewFondComponent } from './component/fond/view-fond/view-fond.component';
+import { ViewPartenaireComponent } from './component/partenaire/view-partenaire/view-partenaire.component';
+import { ViewComponent } from './component/modalite/view/view.component';
 
 const appRoutes: Routes = [
  
@@ -115,7 +117,9 @@ const appRoutes: Routes = [
         ListPartenaireComponent,
         AddPartenaireComponent,
         AddConventionComponent,
-        ViewFondComponent
+        ViewFondComponent,
+        ViewPartenaireComponent,
+        ViewComponent
     ],
     imports: [
         AppRoutingModule,

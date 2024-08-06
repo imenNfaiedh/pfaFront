@@ -11,6 +11,9 @@ export class ConventionService {
 
   constructor(private http: HttpClient) { }
 
+  getConventionsByPartenaireId(id: number): Observable<Convention[]> {
+    return this.http. get<any>(this.apiUrl+'/' + id);  }
+
   getAllConvention():Observable<Convention[]>
   {
     return this.http.get<Convention[]>(this.apiUrl);

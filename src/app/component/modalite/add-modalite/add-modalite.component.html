@@ -57,11 +57,11 @@
       <div class="col-sm-9">
         <select
           id="listFonds"
-          formControlName="fond"
+          formControlName="fondId"
           class="form-control"
           
         >
-          <option *ngFor="let fond of fondList" >
+          <option *ngFor="let fond of fondList" [value] ="fond.idFond" >
             {{ fond.nomCompletFond }}
           </option>
         </select>
@@ -77,8 +77,8 @@
         <select class="form-control" id="basicSelect" class="form-control"
         formControlName="typeModalite">
           <option>GPP</option>
-          <option>déclaratif AF</option>
-          <option>déclaratif AP</option>
+          <option>DECLARATIVE_AF</option>
+          <option>DECLARATIVE_AP</option>
         </select>
         
       </div>

@@ -4,7 +4,85 @@ import { CoreMenu } from '@core/types';
 
 export const menu: CoreMenu[] = [
   // Dashboard
+ 
   {
+    id: 'parent',
+    title: 'Parametrage',
+    //translate: 'MENU.MANAGEMENT.COLLAPSIBLE',
+    type: 'collapsible',
+    icon: 'layers', // Icon for the grand-parent item
+    children: [
+      {
+        id: 'fond',
+        title: 'Fond',
+        translate: 'MENU.DASHBOARD.COLLAPSIBLE',
+        type: 'collapsible',
+        icon: 'credit-card',
+        children: [
+          {
+            id: 'listFonds',
+            title: 'Liste des fonds',
+            translate: 'MENU.DASHBOARD.ANALYTICS',
+            type: 'item',
+            role: ['Admin'],
+            icon: 'circle',
+            url: 'listfonds'
+          }
+        ]
+      },
+      {
+        id: 'modalite',
+        title: 'Modalité',
+        translate: 'MENU.DASHBOARD.COLLAPSIBLE',
+        type: 'collapsible',
+        icon: 'dollar-sign',
+        children: [
+          {
+            id: 'listModalite',
+            title: 'Liste des modalités',
+            translate: 'MENU.DASHBOARD.ANALYTICS',
+            type: 'item',
+            role: ['Admin'],
+            icon: 'circle',
+            url: 'listmodalite'
+          }
+        ]
+      },
+      {
+        id: 'partenaire',
+        title: 'Partenaire',
+        translate: 'MENU.DASHBOARD.COLLAPSIBLE',
+        type: 'collapsible',
+        icon: 'users',
+        children: [
+          {
+            id: 'listPartenaire',
+            title: 'Liste des partenaires',
+            translate: 'MENU.DASHBOARD.ANALYTICS',
+            type: 'item',
+            role: ['Admin'],
+            icon: 'circle',
+            url: 'listpartenaire'
+          }
+        ]
+      }
+    ]
+  }
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  /*{
     id: 'dashboard',
     title: 'Fond',
     translate: 'MENU.DASHBOARD.COLLAPSIBLE',
@@ -81,7 +159,7 @@ export const menu: CoreMenu[] = [
       
     ]
   },
-
+*/
 
 
 

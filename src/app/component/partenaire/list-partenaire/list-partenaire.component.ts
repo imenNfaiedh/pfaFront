@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Partenaire } from 'app/models/partenaire';
 import { PartenaireService } from 'app/services/partenaire.service';
+import { ViewPartenaireComponent } from '../view-partenaire/view-partenaire.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-list-partenaire',
@@ -15,7 +17,9 @@ export class ListPartenaireComponent implements OnInit {
 
   constructor(
     private partenaireService : PartenaireService,
-    private router : Router
+    private router : Router,
+    private modalService: NgbModal,
+
   ) { }
 
   ngOnInit(): void {
@@ -57,5 +61,20 @@ export class ListPartenaireComponent implements OnInit {
   update(id: any){
     console.log(id)
     this.router.navigate(['/addpartenaire', id])
+  }
+
+
+  onClickView(id: number) {
+    console.log(id);
+    const modalRef = this.modalService.open(ViewPartenaireComponent, {
+      centered: true,
+      backdrop: 'static',
+      size: 'lg',
+      windowClass: 'modal modal-primary'
+    });
+    console.log('Référence du modal:', modalRef);
+
+    modalRef.componentInstance.id = id;
+    
   }
 }

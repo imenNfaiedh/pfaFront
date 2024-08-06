@@ -5,6 +5,7 @@ import { Fond } from 'app/models/fond';
 import { FondService } from 'app/services/fond.service';
 import {ModalDismissReasons, NgbActiveModal, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import { AddFondComponent } from '../add-fond/add-fond.component';
+import { ViewFondComponent } from '../view-fond/view-fond.component';
 
 @Component({
   selector: 'app-list-fond',
@@ -81,7 +82,7 @@ export class ListFondComponent implements OnInit {
 onClickView(id: number) {
   console.log(id);
   this.modeView = true;
-  const modalRef = this.modalService.open(AddFondComponent, {
+  const modalRef = this.modalService.open(ViewFondComponent, {
     centered: true,
     backdrop: 'static',
     size: 'lg',

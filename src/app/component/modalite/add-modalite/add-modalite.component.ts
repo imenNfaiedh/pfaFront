@@ -20,6 +20,7 @@ export class AddModaliteComponent implements OnInit {
   mode: string ='';
   modalite : Modalite;
   id : number;
+  
   idFond : number;
   
 
@@ -37,6 +38,7 @@ export class AddModaliteComponent implements OnInit {
     private modaliteService : ModaliteService,
     private router : Router,
     private route: ActivatedRoute,
+
     private fondService : FondService,
   ) { }
 
@@ -73,7 +75,7 @@ export class AddModaliteComponent implements OnInit {
         this.modaliteForm.controls.montantMin.setValue(data.montantMin);
         //this.modaliteForm.controls.fond.setValue(data.listFonds);
 
-        this.modaliteForm.controls.listFonds.setValue(data.listFonds);
+        this.modaliteForm.controls.fondId.setValue(data.fondId);
         this.modaliteForm.controls.typeModalite.setValue(data.typeModalite);
 
       })
@@ -91,7 +93,8 @@ addModalite(){
    console.log(this.modaliteForm.value)
    console.log(this.idFond)
 
-   const item = Object.assign({"fondId" : this.modaliteForm.value.fond.idFond ,
+   debugger;
+   const item = Object.assign({"fondId" : this.modaliteForm.value.fondId ,
                                "montantMin" : this.modaliteForm.value. montantMin,
                                "nomCompletModalite" : this.modaliteForm.value.nomCompletModalite,
                                "montantMax" : this.modaliteForm.value.montantMax,
@@ -137,7 +140,7 @@ addModalite(){
     nomCompletModalite: ['', [Validators.required, Validators.minLength(5)]],
     montantMax: ['', [Validators.required]],
     montantMin:['', [Validators.required]],
-    fond:[null],
+    fondId:[null],
     typeModalite:['', [Validators.required]],
 
      
