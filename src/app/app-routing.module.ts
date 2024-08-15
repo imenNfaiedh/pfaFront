@@ -8,8 +8,11 @@ import { ListPartenaireComponent } from "./component/partenaire/list-partenaire/
 import { AddPartenaireComponent } from "./component/partenaire/add-partenaire/add-partenaire.component";
 import { AddConventionComponent } from "./component/convention/add-convention/add-convention.component";
 import { ViewPartenaireComponent } from "./component/partenaire/view-partenaire/view-partenaire.component";
+import { AuthComponent } from "./component/auth/auth.component";
+import { LoginComponent } from "./component/login/login.component";
 
 const routes: Routes = [
+
 
     { path: 'listfonds', component: ListFondComponent },
     { path: 'addfonds', component: AddFondComponent },
@@ -28,6 +31,14 @@ const routes: Routes = [
 
 
     { path: 'addconvention', component: AddConventionComponent },
+
+
+    { path: 'register', component: AuthComponent },   
+    { path: '', redirectTo: '/auth', pathMatch: 'full' },
+    { path: 'auth', component: LoginComponent },
+
+
+
 
 
 

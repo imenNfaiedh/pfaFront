@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -43,6 +43,10 @@ import { AddConventionComponent } from './component/convention/add-convention/ad
 import { ViewFondComponent } from './component/fond/view-fond/view-fond.component';
 import { ViewPartenaireComponent } from './component/partenaire/view-partenaire/view-partenaire.component';
 import { ViewComponent } from './component/modalite/view/view.component';
+import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
+import { AuthComponent } from './component/auth/auth.component';
+import { LoginComponent } from './component/login/login.component';
+import { TokenInterceptorInterceptor } from './interceptor/token-interceptor.interceptor';
 
 const appRoutes: Routes = [
  
@@ -103,6 +107,8 @@ const appRoutes: Routes = [
   }
 ];
 
+
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -119,9 +125,13 @@ const appRoutes: Routes = [
         AddConventionComponent,
         ViewFondComponent,
         ViewPartenaireComponent,
-        ViewComponent
+        ViewComponent,
+        AuthComponent,
+        LoginComponent
     ],
     imports: [
+
+        KeycloakAngularModule,
         AppRoutingModule,
         FormsModule,
         HttpClientModule,
@@ -152,6 +162,14 @@ const appRoutes: Routes = [
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+
+        { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorInterceptor, multi: true },
+
+
+
+        
+          
+        
      
         // ! IMPORTANT: Provider used to create fake backend, comment while using real API
         fakeBackendProvider
